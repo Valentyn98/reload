@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import Cars from "./components/Cars/Cars";
+import Form from "./components/Form/Form";
+import {useState} from "react";
+import {carServ} from "./services/car.serv";
+
 function App() {
+    const [trigger, setTrigger] =  useState(null)
+    const update = data =>{
+        setTrigger(data)
+    }
+
+const deleteCarById = async (id) =>{
+    try{
+        const delCar = await  carServ.delete(id)
+        console.log(delCar);
+        update(delCar)
+    }catch (error){
+
+    }
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Form update={update}/>
+        <Cars update={update} trigger={trigger} deleteCarById={deleteCarById}/>
     </div>
   );
 }
