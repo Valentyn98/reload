@@ -22,7 +22,8 @@ const UserDet = () => {
                     <div>{user.phone}</div>
                 </div>
             }
-             <Link to={'posts'}><button>ShowPost</button></Link>
+            <Link to={'posts'}><button>Show Post</button></Link>
+            <Link to={'albums'}><button>Show Albums</button></Link>
             <Outlet/>
         </div>
     );
