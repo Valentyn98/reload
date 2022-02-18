@@ -4,6 +4,6 @@ import {urls} from "../config/urls";
 import {axiosService} from "./axios.serv";
 
 export const episodeServ ={
-    getEpisode: ()=>axiosService.get(urls.episode).then(value => value.data)
+    getEpisode: (pages)=>axiosService.get(`${urls.episode}${pages}`).then(value => value.data)
 
 }

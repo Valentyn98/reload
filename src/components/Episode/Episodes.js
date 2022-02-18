@@ -4,6 +4,7 @@ import Episode from "./Episode";
 
 const Episodes = () => {
     const [episodes, setEpisodes] = useState([])
+
     useEffect(()=>{
     episodeServ.getEpisode().then(value => setEpisodes([...value.results]))
     },[])
@@ -16,3 +17,38 @@ console.log(episodes)
 };
 
 export default Episodes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://github.com/SergeyShkolniy/Okten-sept2021-react-module/tree/add-rick-and-morty-api
