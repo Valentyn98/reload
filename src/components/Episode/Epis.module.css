@@ -1,0 +1,20 @@
+.block{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #e0dcda;
+
+}
+
+.styleInfo{
+    height: 80%;
+    background-color:#cdc9c7 ;
+}
+.textStyle{
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding-top: 7px;
+}

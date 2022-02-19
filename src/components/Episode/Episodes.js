@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {episodeServ} from "../../services/episode.serv";
 import Episode from "./Episode";
+import css from "./Episodes.module.css"
 
 const Episodes = () => {
     const [episodes, setEpisodes] = useState([])
@@ -22,14 +23,11 @@ const Episodes = () => {
     }
 console.log(episodes)
     return (
-        <div>
-
-            <div> Rick and Morty episodes</div>
-            <button onClick={forward}>Forward</button>
-            <button onClick={back}>Back</button>
-            {episodes.map(episode => <Episode key={episode.id} episodeInfo={episode}/>)}
-
-
+        <div className={css.father}>
+            <div className={css.blockInfoHead}> Rick and Morty episodes</div>
+            <button  className={css.forward} onClick={forward}>Forward</button>
+            <button className={css.back} onClick={back}>Back</button>
+           <div className={css.blockInfo}>{episodes.map(episode => <Episode key={episode.id} episodeInfo={episode}/>)}</div>
         </div>
     );
 };
