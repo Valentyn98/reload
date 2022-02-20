@@ -1,6 +1,7 @@
 import React from 'react';
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import EpisodeDetailPict from "./EpisodeDetailPict";
+import css from './EpisodesDetails.module.css'
 
 const EpisodeDetails = () => {
     const {state} = useLocation();
@@ -9,7 +10,8 @@ const EpisodeDetails = () => {
     // console.log(character)
     return (
         <div>
-            {character.map(character => <EpisodeDetailPict key={character} characterAll={character}/>)}
+            <Link to={'/'}><button className={css.button}>Episodes</button></Link>
+           <div  className={css.page}> {character.map(character => <EpisodeDetailPict key={character} characterAll={character}/>)}</div>
         </div>
     );
 };
