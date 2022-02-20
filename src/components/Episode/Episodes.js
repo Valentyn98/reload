@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {episodeServ} from "../../services/episode.serv";
 import Episode from "./Episode";
 import css from "./Episodes.module.css"
-import {Link} from "react-router-dom";
+
 
 const Episodes = () => {
     const [episodes, setEpisodes] = useState([])

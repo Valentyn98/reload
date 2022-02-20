@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {axiosService} from "../../services/axios.serv";
-import css from "./Epis.module.css";
-import {Link} from "react-router-dom";
+
 
 const EpisodeDetailPict = ({characterAll}) => {
 

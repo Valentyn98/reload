@@ -7,7 +7,7 @@ const EpisodeDetails = () => {
     const {state} = useLocation();
 
     const character = state.characters;
-    // console.log(character)
+
     return (
         <div>
             <Link to={'/'}><button className={css.button}>Episodes</button></Link>
