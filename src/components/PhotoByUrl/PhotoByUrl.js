@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {imgServices} from "../../services/img.services";
 
 const PhotoByUrl = () => {
+    const [flag,setFlag] = useState(null)
 
-    const [flag, setFlag] = useState(null)
     const [photo, setPhoto] = useState(null)
 
     useEffect(()=>{
@@ -11,7 +11,6 @@ const PhotoByUrl = () => {
             imgServices.getPhotoByUrl(flag).then(value => setPhoto(value))
         }
     },[flag])
-console.log(photo)
     return (
         <div>
             <button onClick={()=>{setFlag('/cat')}}>cat</button>
@@ -20,7 +19,8 @@ console.log(photo)
             <button onClick={()=>{setFlag('/car')}}>car</button>
             <button onClick={()=>{
                 imgServices.getPhotoByUrl(flag).then(value => setPhoto(value))
-            }}>UPDATE</button>
+            }
+            }>Refresh</button>
             <div>
                 <img src={photo} alt=""/>
             </div>
